@@ -65,6 +65,10 @@ Run the following command in your command line (might need to be run as administ
 ```bash
 pip install git+https://github.com/dvingerh/PyInstaLive.git@3.2.4
 ```
+If you clone the project and cd to the project
+```bash
+pip install .
+```
 
 #### Updating
 
