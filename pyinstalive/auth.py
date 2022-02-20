@@ -62,8 +62,13 @@ def authenticate(username, password, force_use_login_args=False):
             logger.info('Creating a new one.')
 
             # login new
+            # original use app login
+            #ig_api = Client(
+            #    username, password,
+            #    on_login=lambda x: onlogin_callback(x, cookie_file), proxy=pil.proxy)
             ig_api = Client(
-                username, password,
+                auto_patch=True, authenticate=True,
+                username=username, password=password,
                 on_login=lambda x: onlogin_callback(x, cookie_file), proxy=pil.proxy)
         else:
             with open(cookie_file) as file_data:
